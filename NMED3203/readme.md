@@ -1,4 +1,4 @@
 # *Timur Metin*
-## 22
-### Yaşar Uni
-__Yeni Medya__
+## *22*
+### *Yaşar Uni*
+#### ***__Yeni Medya__***
