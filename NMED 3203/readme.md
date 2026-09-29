@@ -1,1 +1,0 @@
-Metinlerden Timur
