@@ -1,0 +1,184 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #0b0b13; /* Daha derin bir uzay siyahı */
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+    margin: 0;
+}
+
+main {
+    max-width: 450px;
+    width: 100%;
+    background: #12121c;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.05), inset 0 0 0 1px #2a2a35;
+}
+
+h1 {
+    font-size: 1.6rem;
+    color: #00ffff;
+    letter-spacing: 3px;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    text-align: center;
+}
+
+p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #889;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+#status-panel {
+    display: flex;
+    justify-content: space-around;
+    background-color: #08080d;
+    padding: 1rem;
+    border: 1px solid #334;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: inset 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.panel-item {
+    text-align: center;
+}
+
+.panel-item span {
+    font-size: 0.7rem;
+    display: block;
+    color: #667;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.status-value {
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.status-value.locked { color: #ff4444; }
+.status-value.open { color: #00ff00; }
+
+#game-container {
+    border: 3px solid #334;
+    border-radius: 6px;
+    background-color: #0d0d14;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* D-PAD Güncellemesi */
+.d-pad {
+    display: grid;
+    grid-template-columns: 50px 50px 50px;
+    grid-template-rows: 50px 50px;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+}
+
+.dir-btn {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    background: #1a1a24;
+    color: #00ffff;
+    border: 1px solid #445;
+    box-shadow: 0 4px 0 #08080d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+}
+
+.dir-btn:active, .dir-btn:hover {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #08080d;
+    background: #00ffff;
+    color: #12121c;
+}
+
+/* Aksiyon Butonları */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+button {
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.1s;
+    border: none;
+}
+
+.primary-btn {
+    flex-grow: 1;
+    font-size: 1rem;
+    background: #00ffff;
+    color: #0b0b13;
+    box-shadow: 0 4px 0 #009999;
+}
+
+.primary-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #009999;
+}
+
+#btn-reset {
+    padding: 0.8rem;
+    background: #2a2a35;
+    color: #e0e0e0;
+    box-shadow: 0 4px 0 #111;
+}
+
+#btn-reset:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #111;
+}
+
+#instruction-text {
+    font-size: 0.85rem;
+    color: #00ffff;
+    text-align: center;
+    background: rgba(0, 255, 255, 0.05);
+    border: 1px dashed #00ffff;
+    border-radius: 6px;
+    padding: 0.8rem;
+    margin-bottom: 0;
+}
