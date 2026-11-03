@@ -1,0 +1,50 @@
+/* Temel neon/karanlık estetik (Görsel dili öne çıkarmak için) */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #1a1a24;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    margin: 0;
+}
+
+main {
+    max-width: 500px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: #00ffff;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #a0a0b0;
+}
+
+#status-panel {
+    display: flex;
+    justify-content: space-between;
+    background-color: #2a2a35;
+    padding: 1rem;
+    border: 1px solid #445;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.panel-item span {
+    font-size: 0.8rem;
+    display: block;
+    color: #889;
+}
+
+#door-text { color: #ff4444; }
+
+#game-container {
+    border: 2px solid #556;
+    background-color: #0
