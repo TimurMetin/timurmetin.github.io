@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111b24">
+  <meta name="description" content="Pazarlık Adacığı'nı üç boyutlu keşfet, rotanı kaydet ve yankınla fenerleri yeniden yak.">
+  <title>Echo Tide · Fener Nöbeti 3D</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell bar">
+      <a class="brand" href="./index.html"><span class="brand-mark" aria-hidden="true">◈</span> Echo Tide</a>
+      <a class="nav-link" href="#how">Nasıl oynanır? <span aria-hidden="true">↘</span></a>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="intro" aria-labelledby="title">
+      <div>
+        <p class="place">PAZARLIK ADACIĞI</p>
+        <h1 id="title">Fener <em>Nöbeti</em></h1>
+      </div>
+      <p class="story">Fırtına adanın fenerlerini söndürdü. Adada yürü, rotanı kaydet ve yankınla fenerleri yeniden yak.</p>
+    </section>
+
+    <section class="game" aria-label="Fener Nöbeti 3D oyunu">
+      <div class="world">
+        <div class="world-top">
+          <h2 id="level-title">İskele</h2>
+          <output id="phase" data-phase="ready" aria-live="polite">Keşif</output>
+        </div>
+        <div class="view" id="view">
+          <canvas id="scene" tabindex="0" aria-label="Üç boyutlu ada. Ok tuşları ile yürü veya gideceğin yere tıkla." aria-describedby="keyboard-help"></canvas>
+          <div id="markers" class="markers" aria-label="Fenerler"></div>
+          <div class="camera" role="group" aria-label="Kamera">
+            <button id="orbit-left" type="button" aria-label="Kamerayı sola döndür" title="Sola döndür">↶</button>
+            <button id="orbit-right" type="button" aria-label="Kamerayı sağa döndür" title="Sağa döndür">↷</button>
+            <button id="zoom-in" type="button" aria-label="Yakınlaştır" title="Yakınlaştır">+</button>
+            <button id="zoom-out" type="button" aria-label="Uzaklaştır" title="Uzaklaştır">−</button>
+          </div>
+          <div id="scene-error" class="scene-error" role="status" hidden></div>
+          <div class="scene-prompt" id="scene-prompt">Gideceğin yere tıkla veya ok tuşlarıyla yürü.</div>
+        </div>
+        <div class="deck">
+          <button type="button" class="record" id="record"><span class="record-icon" aria-hidden="true"></span><span id="record-label">Rota kaydet</span><kbd aria-hidden="true">R</kbd></button>
+          <button type="button" class="power" id="power" aria-label="Fenerlere güç ver, basılı tut" aria-pressed="false"><span aria-hidden="true">ϟ</span><strong id="power-label">Güç ver</strong><kbd aria-hidden="true">E</kbd></button>
+        </div>
+      </div>
+
+      <aside class="mission" aria-label="Görev durumu">
+        <div class="mission-head">
+          <p id="level-count">BÖLÜM 1 / 3</p>
+          <h2>Fenerleri yak</h2>
+        </div>
+        <nav id="levels" class="levels" aria-label="Bölümler">
+          <button type="button" aria-label="İskele" aria-current="step">1</button>
+          <button type="button" aria-label="Enkaz geçidi" disabled>2</button>
+          <button type="button" aria-label="Dış kıyı" disabled>3</button>
+        </nav>
+        <ol class="instructions">
+          <li><span>01</span><div><strong>Kaydı başlat</strong><small>Numaralı fenerlere sırayla yürü.</small></div></li>
+          <li><span>02</span><div><strong>Kaydı bitir</strong><small>Yankın aynı rotayı izleyecek.</small></div></li>
+          <li><span>03</span><div><strong>Güç ver</strong><small>Yankı fenerlere ulaşırken basılı tut.</small></div></li>
+        </ol>
+        <div class="status-meter">
+          <p><span id="meter-label">Fenerler</span><span id="meter-value">0 / 2</span></p>
+          <progress id="meter" max="1" value="0" aria-labelledby="meter-label"></progress>
+        </div>
+        <p class="result" id="result" role="status" hidden></p>
+        <div class="recovery">
+          <button type="button" id="replay" hidden>Yankıyı tekrar gönder ↻</button>
+          <button type="button" id="next" hidden>Sonraki bölüm →</button>
+        </div>
+      </aside>
+    </section>
+
+    <section class="notes" id="how" aria-label="Kontroller ve premisler">
+      <article>
+        <h2>Kontroller</h2>
+        <p id="keyboard-help">Haritada bir yere tıkla veya <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> ile yürü. <kbd>R</kbd> kaydı başlatır ve bitirir. Güç vermek için <kbd>E</kbd> ya da <strong>Güç ver</strong> düğmesine basılı tut.</p>
+      </article>
+      <article>
+        <h2>Temporality ve Feedback</h2>
+        <p>Yankı, hareketlerini zamana bağlı olarak tekrar eder. Geri sayım, kayıt işaretleri ve yanan fenerler her eylemin sonucunu gösterir.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="shell credits">
+    <span>Echo Tide · Timur Metin</span>
+    <a href="https://mertseven.com/ima/lab/assets.html" target="_blank" rel="noopener">Varlıklar · Interactive Media Applications lab., Mert Seven, PhD ↗</a>
+  </footer>
+</body>
+</html>
